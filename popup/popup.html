@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Comment Generator</title>
+    <link rel="stylesheet" href="../styles/common.css">
+</head>
+<body>
+    <div class="container">
+        <div class="platform-selector">
+            <select id="platformSelect">
+                <option value="linkedin">LinkedIn</option>
+                <option value="breakcold">Breakcold</option>
+            </select>
+        </div>
+        
+        <div id="linkedinSection" class="platform-section">
+            <h2>LinkedIn Comment Generator</h2>
+            <textarea id="linkedinPrompt" placeholder="Enter your comment prompt..."></textarea>
+            <button id="generateLinkedinComment">Generate Comment</button>
+        </div>
+        
+        <div id="breakcoldSection" class="platform-section" style="display: none;">
+            <h2>Breakcold Comment Generator</h2>
+            <textarea id="breakcoldPrompt" placeholder="Enter your comment prompt..."></textarea>
+            <button id="generateBreakcoldComment">Generate Comment</button>
+        </div>
+        
+        <div id="result" class="result-section">
+            <textarea id="generatedComment" readonly></textarea>
+            <button id="copyComment">Copy to Clipboard</button>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

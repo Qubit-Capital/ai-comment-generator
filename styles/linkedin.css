@@ -1,0 +1,138 @@
+/* LinkedIn-specific styles */
+
+.comment-generator-button.linkedin {
+    background-color: transparent;
+    border: 1px solid #0a66c2;
+    color: #0a66c2;
+    padding: 4px 8px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-right: 8px;
+    transition: all 0.2s ease;
+}
+
+.comment-generator-button.linkedin:hover {
+    background-color: rgba(10, 102, 194, 0.1);
+}
+
+.comment-generator-button.linkedin .icon {
+    font-size: 16px;
+}
+
+.comment-generator-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+/* Comment options styling */
+.comment-option {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.comment-option:hover {
+    border-color: #0a66c2;
+    box-shadow: 0 2px 8px rgba(10, 102, 194, 0.1);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.comment-tone {
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background-color: #f3f6f8;
+    color: #666;
+}
+
+.comment-tone.positive {
+    background-color: #ecfdf3;
+    color: #027a48;
+}
+
+.comment-tone.friendly {
+    background-color: #fff4ed;
+    color: #c4320a;
+}
+
+.comment-tone.curious {
+    background-color: #eef4ff;
+    color: #1939b7;
+}
+
+.comment-tone.enthusiastic {
+    background-color: #fdf2fa;
+    color: #c11574;
+}
+
+.comment-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #1f1f1f;
+}
+
+/* Loading animation */
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin: 20px 0;
+}
+
+.spinner-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #0a66c2;
+    border-radius: 50%;
+    animation: bounce 0.5s infinite alternate;
+}
+
+.spinner-dot:nth-child(2) { animation-delay: 0.1s; }
+.spinner-dot:nth-child(3) { animation-delay: 0.2s; }
+.spinner-dot:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+/* Notification styling */
+.comment-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    color: white;
+    z-index: 10000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    animation: slideIn 0.3s ease-out;
+}
+
+.comment-notification.success {
+    background-color: #057642;
+}
+
+.comment-notification.error {
+    background-color: #b91c1c;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}

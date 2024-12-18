@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "AI Comment Generator Suite",
+  "version": "1.0",
+  "description": "AI-powered comment generation for LinkedIn and Breakcold posts",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.linkedin.com/*",
+    "https://*.breakcold.com/*",
+    "https://*.app.breakcold.com/*",
+    "https://api-bcbe5a.stack.tryrelevance.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.linkedin.com/*"],
+      "css": ["styles/linkedin.css"],
+      "js": ["content/linkedin-content.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://*.breakcold.com/*",
+        "https://*.app.breakcold.com/*"
+      ],
+      "css": ["styles/breakcold.css"],
+      "js": ["content/breakcold-content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": ["images/*", "styles/*"],
+    "matches": [
+      "https://*.linkedin.com/*",
+      "https://*.breakcold.com/*",
+      "https://*.app.breakcold.com/*"
+    ]
+  }]
+}
